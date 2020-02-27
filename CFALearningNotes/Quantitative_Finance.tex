@@ -27,7 +27,7 @@
 \tableofcontents
 
 \mainmatter 
-\chapter{INTRODUCTION TO LINEAR REGRESSION}
+\chapter{Introduction to Linear Regression}
 
 \section{Linear Regression Introduction}
     一元回归模型应该看起来长这样：
@@ -67,8 +67,25 @@
           \end{tabular}%
         \label{tab:theorem-class}%
     \end{table}%
-    \(k\) is the number 
 
+    \begin{enumerate}
+        \item DoF (Degree of freedom) 自由度\\
+                回归模型的自由度是自变量的个数，也就是\(k\)；误差的自由度是(观测样本的个数) - (自变量个数) - 1，也就是 \(n - k - 1\)
+        \item RSS (Regression sum of squares) 回归平方和\\
+                回归模型能够解释的因变量变化量 
+                \[RSS = \sum_{i = 1}^n (\hat Y_i - \overline{Y})^2\]
+        \item SSE (Sum of squared errors) 残差平方和\\
+                回归模型不能够解释的因变量变化量 
+                \[SSE = \sum_{i = 1}^n (\hat Y_i - Y_i)^2\]
+        \item SST (Total Sum of squares) 总离差平方和\\
+                因变量的总变化量
+                \[SST = \sum_{i = 1}^n (\overline{Y_i} - Y_i)^2\]
+        \item MSR (Mean regression sum of squares) 平均回归平方和
+        \item MSE (Mean squared error) 平均残差平方和
+    \end{enumerate}
+
+\section{Calculating \(R^2\) and SEE}
+    
 
 
 
