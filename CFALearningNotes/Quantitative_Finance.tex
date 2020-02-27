@@ -1,0 +1,75 @@
+\documentclass[cn,11pt,chinese]{elegantbook}
+
+\title{CFA二级 学习笔记}
+\subtitle{CFA Level 2 Learning Notes}
+
+\author{Ethan Wang}
+\institute{纽约大学}
+\date{\today}
+\version{0}
+\bioinfo{鸣谢}{特别感谢本笔记模板制作者：Elegant\LaTeX{} Program }
+\extrainfo{Vini. Vidi. Vici. --- Julius Caesar}
+
+\logo{cover.png}
+\cover{front.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+% 修改目录深度
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\tableofcontents
+
+\mainmatter 
+\chapter{INTRODUCTION TO LINEAR REGRESSION}
+
+\section{Linear Regression Introduction}
+    一元回归模型应该看起来长这样：
+    \begin{equation}
+        \hat Y_i = \hat b_0 + \hat b_1 X_i + \epsilon_i, i = 1,\dots, n
+    \end{equation}
+    其中，\\
+    \indent \(\hat Y_i\) (Predicted Value) 是对第\(i\)个因变量 (dependent variable)的估计\\
+    \indent \indent \(\hat b_1\)的置信区间是
+        \[\hat Y \pm (t_c \times s_f)\]
+    \indent \indent \indent \(t_c\)是 two-tailed t-value检验值，自由度 (degree of freedom)是\(n - 2\)\\ 
+    \indent \indent \indent \(s_f = \text{SEE}^2 [1 + \frac{1}{n} + \frac{(X - \overline{X})^2}{(n - 1)s_x^2}]\)是 standard error of the forecast，一般题目中会给\\ 
+    \indent \indent \indent \indent \(s_x^2\)是 variance of the independent variable\\
+    \indent \(\hat X_i\) 是对第\(i\)个自变量(independent variable)的估计\\
+    \indent \(\hat b_1 = \text{COV}_{XY} / \delta_X^2\)是模型的坡度，slope coefficient.\\
+    \indent \indent \(\hat b_1\)的置信区间是
+        \[ \hat b_1 \pm (t_c \times s_{\hat b_1}) \] 
+    \indent \indent \indent \(t_c\)是 two-tailed t-value检验值，自由度 (degree of freedom)是\(n - 2\)\\ 
+    \indent \indent \indent \indent 所以检验\(\hat b_1\) 用\(t_{b_1} = \frac{\hat b_1 - b_1}{s_{\hat b_1}}\)，并且拒绝\(H_0\)如果 \(t > |t_{critical}|\)\\ 
+    \indent \indent \indent \(s_{\hat b_1}\)是 standard error of regression coefficient\\
+    \indent \(\hat b_0 = \overline{Y} - \hat b_1 \overline{X}\)是模型的交点，intercept term.
+
+\section{ANOVA Table}
+    首先，我们先看看ANOVA Table是什么样子的，再解释里面的各项是什么意思
+    \begin{table}[htbp]
+        \centering
+        \caption{ANOVA Table}
+          \begin{tabular}{llll}
+          \toprule
+          Source of Variation & DoF (k) & Sum of Squares & Mean Sum of Squares \\
+          \midrule
+          Regression (explained) & 1 & RSS & MSR = \(RSS / k = RSS\)\\
+          Error (unexplained) & n - 2 & SSE & MSE = \(\frac{SSE}{n - 2}\)\\
+          \midrule
+          Total & n - 1 & SST &   \\
+          \bottomrule
+          \end{tabular}%
+        \label{tab:theorem-class}%
+    \end{table}%
+    \(k\) is the number 
+
+
+
+
+\end{document}
