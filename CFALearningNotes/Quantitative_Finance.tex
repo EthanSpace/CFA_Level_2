@@ -83,10 +83,36 @@
         \item MSR (Mean regression sum of squares) 平均回归平方和
         \item MSE (Mean squared error) 平均残差平方和
     \end{enumerate}
+    其中，SS 代表 sum of squares。MS 代表 Mean sqaured，也就是对应的SS除以对应的自由度。
 
 \section{Calculating \(R^2\) and SEE}
-    
+    \(R^2\) 是 coefficient of determination，表明多少百分比的数据可以被回归模型解释。这个值越大越好。\[R^2 = \frac{SST - SSE}{SST} = \frac{RSS}{SST}\]
 
+    \(SEE\) 是standard deviation of the regression error terms，通过MSE开方得到.
+    \[SEE = \sqrt{MSE} = \sqrt{\frac{SSE}{n - 2}}\]
+
+\section{The F-Statistics}
+    F值表明了该模型中的全部或一部分自变量是否适合用来估计母体。In multiple regression, the F-statistic is used to test whether at least one independent variable in a set of independent variables explains a significant portion of the variation of the dependent variable.
+    \[F = \frac{MSR}{MSE} = \frac{RSS / k}{SSE / (n - k - 1)}\]
+
+    F critical value 是通过分子和分母的自由度，还有significance level决定的。拒绝\(H_0\)的条件是\(F > F_c\)。
+
+\chapter{Multiple Regression}
+\section{Indroduction}
+    多元回归一般的形式是 \[\hat Y_i = \hat b_0 + \hat b_1 X_{1i} + \hat b_2 X_{2i} + \hat b_k X_{ki}\]
+
+\chapter{The Term Structure and Interest Rate Dynamics}
+\section{Spot and Forward Rates}
+    首先，我们先定义一下spot rate 和 forward rate 分别是什么。\\
+    Spot rate 是未来单笔收入的年化市场利率。也可以理解成为零息债券的收益率。\\
+    Forward rate 是对于某贷款事先定好的利率。
+
+    \subsection{Spot Rates}
+        我们定义，面值为1块钱的零息债券的现价为贴现因子(discount factor)，记为\(P_T\)。同时，这笔投资的产出(yield to maturity)记为\(S_T\)
+            \[P_T = \frac{1}{(1 + S_T)^T}\]
+    
+    \subsection{Forward Rates}
+        
 
 
 \end{document}
