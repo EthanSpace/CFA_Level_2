@@ -113,9 +113,19 @@
             \[P_T = \frac{1}{(1 + S_T)^T}\]
     
     \subsection{Forward Rates}
-        我们定义 \(f(j,k) \) 为 \(j\)年之后开始的 \(k\) 年的债券的当年年化利率。\\
+        我们定义 \(f(j,k) \) 为 \(j\)年之后开始的 \(k\) 年的债券的当年年化利率。\(F_{j, k}\) 为面值为1块钱的零息债欠在\(j + k\)年后的未来价格。
+        \[F_{j, k} = \frac{1}{[1 + f(j, k)]^k}\]
         
-        
+    \subsection{Yield to Maturity}
+        \(T\)年期的零息债券的到期回报(yield to maturity)就是当时的spot rate。但是，如果有coupon，就不是spot rate。但是，如果有coupon，就不是spot rate。
+
+    \subsection{Expected and Realized Return on Bonds}
+        Expected return = Yield to maturity 的条件是：\\
+        \indent 持有到到期 \indent 没有提前或者滞后还款 \indent coupon 按照 YTM 再投资
+
+    \section{Forward Pricing Model}
+        Foward Pricing Model 是用来给forward contract 定价的。\\
+        如果现在有面值为1块钱，在\(j + k\)年到期的零息债券，价格是\(P_{(j + k)}\)。另外有一个
 
 
 \end{document}
